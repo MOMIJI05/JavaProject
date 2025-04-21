@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #212121;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Form">
+   <children>
+      <Label layoutX="40.0" layoutY="50.0" prefHeight="32.0" prefWidth="506.0" text="您喜歡的電影類型？（可複選，至少選擇1個）" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="submitButton" layoutX="500.0" layoutY="330.0" mnemonicParsing="false" onAction="#submitButtonOnAction" text="送出" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label fx:id="submitMessageLabel" layoutX="342.0" layoutY="351.0" prefHeight="23.0" prefWidth="152.0" text="" textFill="#d67e78">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="40.0" layoutY="90.0" prefHeight="197.0" prefWidth="520.0">
+         <content>
+            <AnchorPane prefHeight="290.0" prefWidth="504.0" style="-fx-background-color: #212121;">
+               <children>
+                  <CheckBox fx:id="actionCheckBox" layoutX="25.0" layoutY="25.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="動作" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="scifiCheckBox" layoutX="150.0" layoutY="25.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="科幻" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="comedyCheckBox" layoutX="275.0" layoutY="25.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="喜劇" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="suspenseCheckBox" layoutX="400.0" layoutY="25.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="懸疑" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="romanceCheckBox" layoutX="25.0" layoutY="90.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="愛情" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="animationCheckBox" layoutX="25.0" layoutY="220.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="動畫" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="musicalCheckBox" layoutX="25.0" layoutY="155.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="歌劇" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

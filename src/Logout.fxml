@@ -9,9 +9,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #212121;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Logout">
    <children>
+      <Button fx:id="turnbackButton" layoutX="50.0" layoutY="35.0" onAction="#turnbackButtonOnAction" maxHeight="60.0" maxWidth="80.0" minHeight="60.0" minWidth="80.0" prefHeight="60.0" prefWidth="80.0" style="-fx-background-color: #212121;">
+         <graphic>
+            <Group scaleX="0.08" scaleY="0.08">
+               <children>
+                  <SVGPath content="M280-200v-80h284q63 0 109.5-40T720-420q0-60-46.5-100T564-560H312l104 104-56 56-200-200 200-200 56 56-104 104h252q97 0 166.5 63T800-420q0 94-69.5 157T564-200H280Z" fill="WHITE" />
+               </children>
+            </Group>
+         </graphic>
+      </Button>
       <AnchorPane layoutX="36.0" layoutY="133.0" prefHeight="620.0" prefWidth="224.0">
          <children>
-            <Button layoutX="72.0" layoutY="80.0" mnemonicParsing="false" style="-fx-background-color: #212121;">
+            <Button fx:id="favoriteButton" layoutX="72.0" layoutY="80.0" mnemonicParsing="false" onAction="#favoriteButtonOnAction" style="-fx-background-color: #212121;">
                <graphic>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="收藏">
                      <font>
@@ -20,7 +29,7 @@
                   </Text>
                </graphic>
             </Button>
-            <Button layoutX="72.0" layoutY="240.0" mnemonicParsing="false" style="-fx-background-color: #212121;">
+            <Button fx:id="deleteAccountButton" layoutX="72.0" layoutY="240.0" mnemonicParsing="false" onAction="#deleteAccountButtonOnAction" style="-fx-background-color: #212121;">
                <graphic>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="刪除帳戶" wrappingWidth="70">
                      <font>
@@ -56,7 +65,7 @@
             <Font size="50.0" />
          </font>
       </Text>
-      <Button layoutX="461.0" layoutY="466.0" mnemonicParsing="false" style="-fx-background-color: #212121; -fx-border-color: #d67e78; -fx-border-width: 2;">
+      <Button fx:id="yesButton" layoutX="461.0" layoutY="466.0" onAction="#yesButtonOnAction" mnemonicParsing="false" style="-fx-background-color: #212121; -fx-border-color: #d67e78; -fx-border-width: 2;">
          <graphic>
             <Text fill="#d67e78" strokeType="OUTSIDE" strokeWidth="0.0" text="是" textAlignment="CENTER" wrappingWidth="107">
                <font>
@@ -65,7 +74,7 @@
             </Text>
          </graphic>
       </Button>
-      <Button layoutX="931.0" layoutY="465.0" mnemonicParsing="false" style="-fx-background-color: #212121;">
+      <Button fx:id="noButton" layoutX="931.0" layoutY="465.0" onAction="#favoriteButtonOnAction" mnemonicParsing="false" style="-fx-background-color: #212121;">
          <graphic>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="否" textAlignment="CENTER" wrappingWidth="107">
                <font>

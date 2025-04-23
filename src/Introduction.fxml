@@ -46,10 +46,10 @@
             <Font size="30.0" />
          </font>
       </Hyperlink>
-      <Button fx:id="star" layoutX="982.0" layoutY="160.0" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" prefHeight="150" prefWidth="150" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
+      <Button fx:id="starButton" layoutX="982.0" layoutY="160.0" onAction="#starButtonOnAction" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" prefHeight="150" prefWidth="150" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
          <graphic>
             <Group scaleX="6" scaleY="6">
-                  <SVGPath content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
+                  <SVGPath fx:id="starSVGPath" content="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z" fill="#ffab10" />
             </Group>
          </graphic>
       </Button>
@@ -63,7 +63,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="70.0" layoutY="35.0" maxHeight="60.0" maxWidth="80.0" minHeight="60.0" minWidth="80.0" prefHeight="60.0" prefWidth="80.0" style="-fx-background-color: #212121;">
+      <Button fx:id="turnbackButton" layoutX="70.0" layoutY="35.0" onAction="#turnbackButtonOnAction" maxHeight="60.0" maxWidth="80.0" minHeight="60.0" minWidth="80.0" prefHeight="60.0" prefWidth="80.0" style="-fx-background-color: #212121;">
          <graphic>
             <Group scaleX="0.08" scaleY="0.08">
                <children>

@@ -12,6 +12,15 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #212121;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Favorite">
    <children>
+      <Button fx:id="turnbackButton" layoutX="50.0" layoutY="35.0" onAction="#turnbackButtonOnAction" maxHeight="60.0" maxWidth="80.0" minHeight="60.0" minWidth="80.0" prefHeight="60.0" prefWidth="80.0" style="-fx-background-color: #212121;">
+         <graphic>
+            <Group scaleX="0.08" scaleY="0.08">
+               <children>
+                  <SVGPath content="M280-200v-80h284q63 0 109.5-40T720-420q0-60-46.5-100T564-560H312l104 104-56 56-200-200 200-200 56 56-104 104h252q97 0 166.5 63T800-420q0 94-69.5 157T564-200H280Z" fill="WHITE" />
+               </children>
+            </Group>
+         </graphic>
+      </Button>
       <AnchorPane layoutX="36.0" layoutY="133.0" prefHeight="620.0" prefWidth="224.0">
          <children>
             <Button layoutX="72.0" layoutY="80.0" mnemonicParsing="false" style="-fx-background-color: #212121;">
@@ -23,7 +32,7 @@
                   </Text>
                </graphic>
             </Button>
-            <Button layoutX="72.0" layoutY="240.0" mnemonicParsing="false" style="-fx-background-color: #212121;">
+            <Button fx:id="deleteAccountButton" layoutX="72.0" layoutY="240.0" mnemonicParsing="false" onAction="#deleteAccountButtonOnAction" style="-fx-background-color: #212121;">
                <graphic>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="刪除帳戶" wrappingWidth="70.26668548583984">
                      <font>
@@ -32,7 +41,7 @@
                   </Text>
                </graphic>
             </Button>
-            <Button layoutX="72.0" layoutY="441.0" mnemonicParsing="false" style="-fx-background-color: #212121;">
+            <Button fx:id="logoutButton" layoutX="72.0" layoutY="441.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" style="-fx-background-color: #212121;">
                <graphic>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="登出" wrappingWidth="70.26668548583984">
                      <font>
@@ -55,7 +64,7 @@
          </graphic>
       </Button>
 
-      <Button fx:id="movieButton1" layoutX="360.0" layoutY="131.0" mnemonicParsing="false" prefHeight="247.0" prefWidth="163.0" style="-fx-background-color: #212121;">
+      <Button fx:id="movieButton1" layoutX="360.0" layoutY="131.0" mnemonicParsing="false" onAction="#movieButton1OnAction" prefHeight="247.0" prefWidth="163.0" style="-fx-background-color: #212121;">
          <graphic>
             <ImageView fx:id="movieImage1" fitHeight="266.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -226,45 +235,45 @@
       </Label>
 
 
-      <Button fx:id="star1" layoutX="312.0" layoutY="140.0" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
+      <Button fx:id="starButton1" layoutX="312.0" layoutY="140.0" onAction="#starButtonOnAction" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
          <graphic>
             <Group scaleX="2" scaleY="2">
-                  <SVGPath content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
+                  <SVGPath fx:id="starSVGPath1" content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
             </Group>
          </graphic>
       </Button>
-      <Button fx:id="star2" layoutX="650.0" layoutY="140.0" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
+      <Button fx:id="starButton2" layoutX="650.0" layoutY="140.0" onAction="#starButtonOnAction" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
          <graphic>
             <Group scaleX="2" scaleY="2">
-                  <SVGPath content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
+                  <SVGPath fx:id="starSVGPath2" content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
             </Group>
          </graphic>
       </Button>
-      <Button fx:id="star3" layoutX="982.0" layoutY="140.0" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
+      <Button fx:id="starButton3" layoutX="982.0" layoutY="140.0" onAction="#starButtonOnAction" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
          <graphic>
             <Group scaleX="2" scaleY="2">
-                  <SVGPath content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
+                  <SVGPath fx:id="starSVGPath3" content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
             </Group>
          </graphic>
       </Button>
-      <Button fx:id="star4" layoutX="303.0" layoutY="473.0" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
+      <Button fx:id="starButton4" layoutX="303.0" layoutY="473.0" onAction="#starButtonOnAction" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
          <graphic>
             <Group scaleX="2" scaleY="2">
-                  <SVGPath content="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z" fill="#ffab10" />
+                  <SVGPath fx:id="starSVGPath4" content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
             </Group>
          </graphic>
       </Button>
-      <Button fx:id="star5" layoutX="650.0" layoutY="473.0" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 4;">
+      <Button fx:id="starButton5" layoutX="650.0" layoutY="473.0" onAction="#starButtonOnAction" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 4;">
          <graphic>
             <Group scaleX="2" scaleY="2">
-                  <SVGPath content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
+                  <SVGPath fx:id="starSVGPath5" content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
             </Group>
          </graphic>
       </Button>
-      <Button fx:id="star6" layoutX="982.0" layoutY="473.0" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
+      <Button fx:id="starButton6" layoutX="982.0" layoutY="473.0" onAction="#starButtonOnAction" maxHeight="44" maxWidth="44" minHeight="44" minWidth="44" prefHeight="44" prefWidth="44" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
          <graphic>
             <Group scaleX="2" scaleY="2">
-                  <SVGPath content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
+                  <SVGPath fx:id="starSVGPath6" content="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#ffab10" />
             </Group>
          </graphic>
       </Button>

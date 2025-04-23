@@ -1,30 +1,70 @@
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
+import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 public class Logout{
     @FXML
-    private CheckBox actionCheckBox;
+    private Button favoriteButton;
     @FXML
-    private CheckBox scifiCheckBox;
+    private Button deleteAccountButton;
     @FXML
-    private CheckBox comedyCheckBox;
+    private Button turnbackButton;
     @FXML
-    private CheckBox suspenseCheckBox;
+    private Button yesButton;
     @FXML
-    private CheckBox romanceCheckBox;
-    @FXML
-    private CheckBox animationCheckBox;
-    @FXML
-    private CheckBox musicalCheckBox;
-    @FXML
-    private Button submitButton;
-    @FXML
-    private Label submitMessageLabel;
+    private Button noButton;
 
-    public void submitButtonOnAction(ActionEvent event){
-        submitMessageLabel.setText("請至少選擇1個類型");
+    public void favoriteButtonOnAction(ActionEvent event) throws IOException{
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        
+        FXMLLoader favoriteLoader = new FXMLLoader(getClass().getResource("Favorite.fxml"));
+        Scene favoriteScene = new Scene(favoriteLoader.load());
+        String favoriteCSS = this.getClass().getResource("Favorite.css").toExternalForm();
+        favoriteScene.getStylesheets().add(favoriteCSS);
+
+        stage.setScene(favoriteScene);
     }
+
+    public void deleteAccountButtonOnAction(ActionEvent event) throws IOException{
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        FXMLLoader deleteAccountLoader = new FXMLLoader(getClass().getResource("DeleteAccount.fxml"));
+        Scene deleteAccountScene = new Scene(deleteAccountLoader.load());
+        String deleteAccountCSS = this.getClass().getResource("DeleteAccount.css").toExternalForm();
+        deleteAccountScene.getStylesheets().add(deleteAccountCSS);
+
+        stage.setScene(deleteAccountScene);
+    }
+
+    public void turnbackButtonOnAction(ActionEvent event) throws IOException{
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        FXMLLoader recommendLoader = new FXMLLoader(getClass().getResource("Recommend.fxml"));
+        Scene recommendScene = new Scene(recommendLoader.load());
+        String recommendCSS = this.getClass().getResource("Recommend.css").toExternalForm();
+        recommendScene.getStylesheets().add(recommendCSS);
+
+        stage.setScene(recommendScene);
+    }
+
+    public void yesButtonOnAction(ActionEvent event) throws IOException{
+        JOptionPane.showMessageDialog(null, "已登出，即將跳轉到登入頁面", "Message", JOptionPane.INFORMATION_MESSAGE);
+
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
+        Scene loginScene = new Scene(loginLoader.load());
+        String loginCSS = this.getClass().getResource("Login.css").toExternalForm();
+        loginScene.getStylesheets().add(loginCSS);
+
+        stage.setScene(loginScene);
+    }
+
 }

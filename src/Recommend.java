@@ -1,4 +1,6 @@
 import java.io.IOException;
+
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +32,30 @@ public class Recommend {
     private Button accountButton;
     @FXML
     private Label recommendMessageLabel;
+    @FXML
+    private Button movieButton1;
+    @FXML
+    private Button movieButton2;
+    @FXML
+    private Button movieButton3;
+    @FXML
+    private Button movieButton4;
+    @FXML
+    private Button movieButton5;
+    @FXML
+    private Button movieButton6;
+    @FXML
+    private Label movieName1;
+    @FXML
+    private Label movieName2;
+    @FXML
+    private Label movieName3;
+    @FXML
+    private Label movieName4;
+    @FXML
+    private Label movieName5;
+    @FXML
+    private Label movieName6;
 
 
     public void submitButtonOnAction(ActionEvent event){
@@ -38,23 +64,67 @@ public class Recommend {
 
     public void accountButtonOnAction(ActionEvent event) throws IOException{
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        
-        FXMLLoader favoriteLoader = new FXMLLoader(getClass().getResource("Favorite.fxml"));
-        Scene favoriteScene = new Scene(favoriteLoader.load());
-        String favoriteCSS = this.getClass().getResource("Favorite.css").toExternalForm();
-        favoriteScene.getStylesheets().add(favoriteCSS);
 
-        stage.setScene(favoriteScene);
+        Platform.runLater(() -> {
+            Loading loading = new Loading(stage);
+            loading.show();
+
+            new Thread(() -> {
+                try{
+                    FXMLLoader favoriteLoader = new FXMLLoader(getClass().getResource("Favorite.fxml"));
+                    Scene favoriteScene = new Scene(favoriteLoader.load());
+                    String favoriteCSS = this.getClass().getResource("Favorite.css").toExternalForm();
+                    favoriteScene.getStylesheets().add(favoriteCSS);
+
+                    Platform.runLater(() -> {
+                        stage.setScene(favoriteScene);
+                        loading.closeStage();
+                    });
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }).start();
+        });
     }
 
-    public void movieButton1OnAction(ActionEvent event) throws IOException{
+    public void movieButtonOnAction(ActionEvent event) throws IOException{
+        String movieButtonId = ((Button)event.getSource()).getId();
+        Label movieLabel;
+        String movieName;
+        if(movieButtonId.equals("movieButton1")) movieLabel = movieName1;
+        else if(movieButtonId.equals("movieButton2")) movieLabel = movieName2;
+        else if(movieButtonId.equals("movieButton3")) movieLabel = movieName3;
+        else if(movieButtonId.equals("movieNutton4")) movieLabel = movieName4;
+        else if(movieButtonId.equals("movieNutton4")) movieLabel = movieName5;
+        else movieLabel = movieName6;
+
+        movieName = movieLabel.getText();
+        // System.out.println(movieButtonId);
+        // System.out.println(movieName);
+
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 
-        FXMLLoader introductionLoader = new FXMLLoader(getClass().getResource("Introduction.fxml"));
-        Scene introductionScene = new Scene(introductionLoader.load());
-        String introductionCSS = this.getClass().getResource("Introduction.css").toExternalForm();
-        introductionScene.getStylesheets().add(introductionCSS);
+        Platform.runLater(() -> {
+            Loading loading = new Loading(stage);
+            loading.show();
 
-        stage.setScene(introductionScene);
+            new Thread(() -> {
+                try{
+                    FXMLLoader introductionLoader = new FXMLLoader(getClass().getResource("Introduction.fxml"));
+                    Scene introductionScene = new Scene(introductionLoader.load());
+                    String introductionCSS = this.getClass().getResource("Introduction.css").toExternalForm();
+                    introductionScene.getStylesheets().add(introductionCSS);
+
+                    Platform.runLater(() -> {
+                        stage.setScene(introductionScene);
+                        loading.closeStage();
+                    });
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }).start();
+        });
     }
 }

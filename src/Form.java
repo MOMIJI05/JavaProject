@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,14 +34,32 @@ public class Form {
 
     public void submitButtonOnAction(ActionEvent event) throws IOException{
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        FXMLLoader recommendLoader = new FXMLLoader();
-        recommendLoader.setLocation(getClass().getResource("Recommend.fxml"));
-        Scene recommendScene = new Scene(recommendLoader.load());
-        String recommendCSS = this.getClass().getResource("Recommend.css").toExternalForm();
-        recommendScene.getStylesheets().add(recommendCSS);
 
         if(vaildSubmit()){
-            stage.setScene(recommendScene);
+
+
+            Platform.runLater(() -> {
+                Loading loading = new Loading(stage);
+                loading.show();
+
+                new Thread(() -> {
+                    try{
+                        FXMLLoader recommendLoader = new FXMLLoader();
+                        recommendLoader.setLocation(getClass().getResource("Recommend.fxml"));
+                        Scene recommendScene = new Scene(recommendLoader.load());
+                        String recommendCSS = this.getClass().getResource("Recommend.css").toExternalForm();
+                        recommendScene.getStylesheets().add(recommendCSS);
+
+                        Platform.runLater(() -> {
+                            stage.setScene(recommendScene);
+                            loading.closeStage();
+                        });
+                    }
+                    catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }).start();
+            });
         }
         else{
             submitMessageLabel.setText("請至少選擇1個類型");

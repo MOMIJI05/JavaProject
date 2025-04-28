@@ -12,48 +12,24 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #212121;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Introduction">
    <children>
-      <Button layoutX="800.0" layoutY="0.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" scaleX="0.1" scaleY="0.1" style="-fx-background-color: #212121;">
-         <graphic>
-            <SVGPath content="" fill="WHITE" />
-         </graphic>
-      </Button>
-      <Label fx:id="movieName" layoutX="373.0" layoutY="110.0" text="愛麗絲夢遊仙境" textFill="WHITE">
-         <font>
-            <Font size="40.0" />
-         </font></Label>
-      <Label fx:id="movieTag1" layoutX="373.0" layoutY="170.0" text="#動畫" textFill="WHITE">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <Label fx:id="movieTag2" layoutX="483.0" layoutY="170.0" text="#奇幻" textFill="WHITE">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <Label fx:id="movieTag3" layoutX="593.0" layoutY="170.0" text="#冒險" textFill="WHITE">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
+      <Label fx:id="movieName" id="movieName" layoutX="373.0" layoutY="110.0" text="愛麗絲夢遊仙境" textFill="WHITE" />
+      <Label fx:id="movieTag1" layoutX="373.0" layoutY="170.0" text="#動畫" textFill="WHITE" />
+      <Label fx:id="movieTag2" layoutX="483.0" layoutY="170.0" text="#奇幻" textFill="WHITE" />
+      <Label fx:id="movieTag3" layoutX="593.0" layoutY="170.0" text="#冒險" textFill="WHITE" />
       <ImageView fx:id="movieImage" fitHeight="384.0" fitWidth="252.0" layoutX="74.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:\C:\Users\Addmin\Desktop\JavaProject\resource\movieImageTest.jpg" />
          </image>
       </ImageView>
-      <Hyperlink layoutX="377.0" layoutY="312.0" text="Hyperlink" underline="true">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Hyperlink>
-      <Button fx:id="starButton" layoutX="982.0" layoutY="160.0" onAction="#starButtonOnAction" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" prefHeight="150" prefWidth="150" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
+      <Hyperlink fx:id="hyperlink" id="hyperlink" layoutX="377.0" layoutY="312.0" text="Hyperlink" underline="true" />
+      <Button fx:id="starButton" layoutX="982.0" layoutY="130.0" onAction="#starButtonOnAction" maxHeight="120" maxWidth="120" minHeight="120" minWidth="120" prefHeight="120" prefWidth="120" style="-fx-background-color: #212121; -fx-border-color: #ffab10; -fx-border-width: 2;">
          <graphic>
-            <Group scaleX="6" scaleY="6">
+            <Group scaleX="4" scaleY="4">
                   <SVGPath fx:id="starSVGPath" content="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z" fill="#ffab10" />
             </Group>
          </graphic>
       </Button>
-      <Label layoutX="1025.0" layoutY="110.0" text="收藏" textFill="#ffab10">
+      <Label layoutX="1015.0" layoutY="90.0" text="收藏" textFill="#ffab10">
          <font>
             <Font size="30.0" />
          </font>

@@ -1,5 +1,6 @@
 import java.io.IOException;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,12 +24,27 @@ public class Introduction {
     public void turnbackButtonOnAction(ActionEvent event) throws IOException{
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 
-        FXMLLoader recommendLoader = new FXMLLoader(getClass().getResource("Recommend.fxml"));
-        Scene recommendScene = new Scene(recommendLoader.load());
-        String recommendCSS = this.getClass().getResource("Recommend.css").toExternalForm();
-        recommendScene.getStylesheets().add(recommendCSS);
+        Platform.runLater(() -> {
+            Loading loading = new Loading(stage);
+            loading.show();
 
-        stage.setScene(recommendScene);
+            new Thread(() -> {
+                try{
+                    FXMLLoader recommendLoader = new FXMLLoader(getClass().getResource("Recommend.fxml"));
+                    Scene recommendScene = new Scene(recommendLoader.load());
+                    String recommendCSS = this.getClass().getResource("Recommend.css").toExternalForm();
+                    recommendScene.getStylesheets().add(recommendCSS);
+
+                    Platform.runLater(() -> {
+                        stage.setScene(recommendScene);
+                        loading.closeStage();
+                    });
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }).start();
+        });
     }
 
     public void starButtonOnAction(ActionEvent event) throws IOException{

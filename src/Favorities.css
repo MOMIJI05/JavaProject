@@ -1,1 +1,54 @@
+@font-face {
+    font-family: 'LXGW WenKai Mono TC';
+    src: url("file:C:/Users/Addmin/Desktop/JavaProject/resource/LXGWWenKaiMonoTC-Regular.ttf");
+}
 
+.root{
+    -fx-background-color: #212121;
+}
+
+.text{
+    -fx-font-family: 'LXGW WenKai Mono TC';
+}
+
+#movieName{
+    -fx-font-family: 'LXGW WenKai Mono TC';
+    -fx-font-size: 23;
+}
+
+#movieTag{
+    -fx-font-family: 'LXGW WenKai Mono TC';
+    -fx-font-size: 20;
+}
+
+#functionText{
+    -fx-font-family: 'LXGW WenKai Mono TC';
+    -fx-font-size: 35;
+}
+
+#yesnoText{
+    -fx-font-family: 'LXGW WenKai Mono TC';
+    -fx-font-size: 40;
+}
+
+#confirmMessage{
+    -fx-font-family: 'LXGW WenKai Mono TC';
+    -fx-font-size: 50;
+}
+
+#Button{
+    -fx-background-color: #212121;
+}
+
+.button{
+    -fx-background-color: #4682b4;
+    -fx-font-size: 23;
+}
+
+.button:hover{
+    -fx-cursor: hand;
+}
+
+.button:pressed{
+    -fx-background-color: #d67e78;
+}

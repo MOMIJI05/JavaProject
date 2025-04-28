@@ -12,41 +12,13 @@
    <center>
       <AnchorPane prefHeight="400.0" prefWidth="465.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="Text1" layoutX="91.0" layoutY="73.0" prefHeight="15.0" prefWidth="83.0" text="帳號：" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="91.0" layoutY="153.0" prefHeight="15.0" prefWidth="83.0" text="密碼：" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <TextField fx:id="usernameTextField" layoutX="174.0" layoutY="72.0" prefHeight="34.0" prefWidth="334.0" promptText="帳號">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </TextField>
-            <PasswordField fx:id="passwordTextField" layoutX="174.0" layoutY="152.0" prefHeight="34.0" prefWidth="334.0" promptText="密碼">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </PasswordField>
-            <Button fx:id="signupButton" layoutX="101.0" layoutY="289.0" mnemonicParsing="false" onAction="#signupButtonOnAction" prefHeight="42.0" prefWidth="123.0" text="註冊" textFill="WHITE">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Button>
-            <Button fx:id="loginButton" layoutX="369.0" layoutY="289.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="42.0" prefWidth="123.0" text="登入" textFill="WHITE">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Button>
-            <Label fx:id="loginMessageLabel" layoutX="91.0" layoutY="225.0" prefHeight="32.0" prefWidth="418.0" text="" textFill="#d67e78">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
+            <Label layoutX="91.0" layoutY="73.0" prefHeight="15.0" prefWidth="83.0" text="帳號：" textFill="WHITE" />
+            <Label layoutX="91.0" layoutY="153.0" prefHeight="15.0" prefWidth="83.0" text="密碼：" textFill="WHITE" />
+            <TextField fx:id="usernameTextField" layoutX="174.0" layoutY="72.0" prefHeight="34.0" prefWidth="334.0" promptText="帳號" />
+            <PasswordField fx:id="passwordTextField" layoutX="174.0" layoutY="152.0" prefHeight="34.0" prefWidth="334.0" promptText="密碼" />
+            <Label fx:id="loginMessageLabel" id="loginMessageLabel" layoutX="91.0" layoutY="230.0" prefHeight="14.0" prefWidth="418.0" text="" textFill="#d67e78" />
+            <Button fx:id="signupButton" layoutX="101.0" layoutY="289.0" mnemonicParsing="false" onAction="#signupButtonOnAction" prefHeight="42.0" prefWidth="123.0" text="註冊" textFill="WHITE" />
+            <Button fx:id="loginButton" layoutX="369.0" layoutY="289.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="42.0" prefWidth="123.0" text="登入" textFill="WHITE" />
          </children>
       </AnchorPane>
    </center>

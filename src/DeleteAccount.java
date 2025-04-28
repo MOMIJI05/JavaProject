@@ -58,6 +58,7 @@ public class DeleteAccount {
     public void yesButtonOnAction(ActionEvent event) throws IOException{
         String[] options = {"是", "否"};
         var selection = JOptionPane.showOptionDialog(null, "確定要刪除帳戶嗎？", "Message", 0, 1, null, options, options[0]);
+
         if(selection == 0){
             JOptionPane.showMessageDialog(null, "已刪除帳戶，即將跳轉到登入頁面", "Message", JOptionPane.INFORMATION_MESSAGE);
 

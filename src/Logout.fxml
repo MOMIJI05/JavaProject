@@ -22,29 +22,17 @@
          <children>
             <Button fx:id="favoriteButton" layoutX="72.0" layoutY="80.0" mnemonicParsing="false" onAction="#favoriteButtonOnAction" style="-fx-background-color: #212121;">
                <graphic>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="收藏">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                  </Text>
+                  <Text id="functionText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="收藏" wrappingWidth="70" />
                </graphic>
             </Button>
             <Button fx:id="deleteAccountButton" layoutX="72.0" layoutY="240.0" mnemonicParsing="false" onAction="#deleteAccountButtonOnAction" style="-fx-background-color: #212121;">
                <graphic>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="刪除帳戶" wrappingWidth="70">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                  </Text>
+                  <Text id="functionText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="刪除帳戶" wrappingWidth="70" />
                </graphic>
             </Button>
             <Button layoutX="72.0" layoutY="441.0" mnemonicParsing="false" style="-fx-background-color: #212121;">
                <graphic>
-                  <Text fill="#d67e78" strokeType="OUTSIDE" strokeWidth="0.0" text="登出" underline="true" wrappingWidth="70">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                  </Text>
+                  <Text id="functionText" fill="#d67e78" strokeType="OUTSIDE" strokeWidth="0.0" text="登出" underline="true" wrappingWidth="70" />
                </graphic></Button>
          </children>
       </AnchorPane>
@@ -60,27 +48,15 @@
             </Group>
          </graphic>
       </Button>
-      <Text fill="WHITE" layoutX="416.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="您確定要登出嗎？" textAlignment="CENTER" wrappingWidth="684.13330078125">
-         <font>
-            <Font size="50.0" />
-         </font>
-      </Text>
+      <Text id="confirmMessage" fill="WHITE" layoutX="416.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="您確定要登出嗎？" textAlignment="CENTER" wrappingWidth="684.13330078125" />
       <Button fx:id="yesButton" layoutX="461.0" layoutY="466.0" onAction="#yesButtonOnAction" mnemonicParsing="false" style="-fx-background-color: #212121; -fx-border-color: #d67e78; -fx-border-width: 2;">
          <graphic>
-            <Text fill="#d67e78" strokeType="OUTSIDE" strokeWidth="0.0" text="是" textAlignment="CENTER" wrappingWidth="107">
-               <font>
-                  <Font size="40.0" />
-               </font>
-            </Text>
+            <Text id="yesnoText" fill="#d67e78" strokeType="OUTSIDE" strokeWidth="0.0" text="是" textAlignment="CENTER" wrappingWidth="107" />
          </graphic>
       </Button>
       <Button fx:id="noButton" layoutX="931.0" layoutY="465.0" onAction="#favoriteButtonOnAction" mnemonicParsing="false" style="-fx-background-color: #212121;">
          <graphic>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="否" textAlignment="CENTER" wrappingWidth="107">
-               <font>
-                  <Font size="40.0" />
-               </font>
-            </Text>
+            <Text id="yesnoText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="否" textAlignment="CENTER" wrappingWidth="107" />
          </graphic>
       </Button>
 
